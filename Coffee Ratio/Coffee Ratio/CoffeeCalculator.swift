@@ -25,18 +25,18 @@
 import Foundation
 
 class CoffeeCalculator {
-  /* Variables */
-  var gramsOfWater: Double
-  init() {
-    gramsOfWater = 18.5
-  }
-  
-  init(gramsOfWater: Double) {
-    self.gramsOfWater = gramsOfWater
-  }
-  
-  func calculateGramsOfWaterTimes(gramsOfCoffee: Int) -> Double {
-    let gramsOfCoffeeAsDouble = Double(gramsOfCoffee)
-    return gramsOfWater * gramsOfCoffeeAsDouble
-  }
+    /* Variables */
+    let gramsOfWater: Double
+    convenience init() {
+        self.init(gramsOfWater: 18.5)
+    }
+    
+    init(gramsOfWater: Double) {
+        self.gramsOfWater = gramsOfWater
+    }
+    
+    func calculateGramsOfWaterTimes(_ gramsOfCoffee: Int) -> Double {
+        let gramsOfCoffeeAsDouble = Double(gramsOfCoffee)
+        return gramsOfWater * gramsOfCoffeeAsDouble
+    }
 }
