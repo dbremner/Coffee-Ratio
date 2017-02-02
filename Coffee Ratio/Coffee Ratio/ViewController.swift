@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     backgroundImage.image = UIImage(named: "background")
     self.view.insertSubview(backgroundImage, at: 0)
-    let myColor : UIColor = UIColor( red: 255, green: 255, blue:255, alpha: 1.0 )
+    let myColor = UIColor( red: 255, green: 255, blue:255, alpha: 1.0 )
     coffeeTF.layer.borderColor = myColor.cgColor
     coffeeTF.layer.borderWidth = 1
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
