@@ -28,7 +28,7 @@ class Coffee_RatioTests: XCTestCase {
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
     let correctValue = (16.8 * 16) as Float
-    let testedValue = vc.calculateWaterInGrams(coffee: 16, water: 16.8)
+    let testedValue = vc.calculateWaterInGrams(16, water: 16.8)
     
     print("testedValue = \(testedValue)")
     

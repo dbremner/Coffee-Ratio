@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     view.endEditing(true)
   }
   
-  func calculateWaterInGrams(coffee: Float, water: Float) -> Float {
+  func calculateWaterInGrams(_ coffee: Float, water: Float) -> Float {
     return coffee * water
   }
   
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
       
       let coffeeLabelAsFloat = (coffeeTF.text! as NSString).floatValue
       let waterValueAsFloat = (waterRatioTF.text! as NSString).floatValue
-      let waterGrams = calculateWaterInGrams(coffee: coffeeLabelAsFloat, water: waterValueAsFloat)
+      let waterGrams = calculateWaterInGrams(coffeeLabelAsFloat, water: waterValueAsFloat)
       
       waterGramsLabel.text = NSString(format: "%.2f", waterGrams) as String
       
