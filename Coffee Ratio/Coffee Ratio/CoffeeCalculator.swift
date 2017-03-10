@@ -24,19 +24,21 @@
 
 import Foundation
 
-class CoffeeCalculator {
+struct CoffeeCalculator {
     /* Variables */
-    let gramsOfWater: Double
-    convenience init() {
+    let gramsOfWater: Measurement<UnitMass>
+    init() {
         self.init(gramsOfWater: 18.5)
     }
     
     init(gramsOfWater: Double) {
-        self.gramsOfWater = gramsOfWater
+        self.gramsOfWater = Measurement(value: gramsOfWater, unit: UnitMass.grams)
+        
+        //gramsOfWater
     }
     
     func calculateGramsOfWaterTimes(_ gramsOfCoffee: Int) -> Double {
-        let gramsOfCoffeeAsDouble = Double(gramsOfCoffee)
-        return gramsOfWater * gramsOfCoffeeAsDouble
+        let gramsOfCoffeeAsDouble = Measurement(value: Double(gramsOfCoffee), unit: UnitMass.grams)
+        return gramsOfWater.value * gramsOfCoffeeAsDouble.value
     }
 }

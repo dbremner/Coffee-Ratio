@@ -75,11 +75,11 @@ class ViewController: UIViewController {
       
       let coffeeLabelAsFloat = (coffeeTF.text! as NSString).floatValue
       let waterValueAsFloat = (waterRatioTF.text! as NSString).floatValue
-      let waterGrams = calculateWaterInGrams(coffeeLabelAsFloat, water: waterValueAsFloat)
+      let waterGrams = Measurement(value: Double(calculateWaterInGrams(coffeeLabelAsFloat, water: waterValueAsFloat)), unit: UnitMass.grams)
       
-      waterGramsLabel.text = NSString(format: "%.2f", waterGrams) as String
+      waterGramsLabel.text = NSString(format: "%.2f", waterGrams.value) as String
       
-      if waterGrams == 0.0 {
+      if waterGrams.value == 0.0 {
         waterGramsLabel.text = ""
       }
     }
