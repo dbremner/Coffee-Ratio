@@ -35,15 +35,17 @@ class ViewController: UIViewController {
   @IBOutlet var displayTimeLabel: UILabel!
   
   var timer = JMPTimer()
-  var waterValues: [String]?
-  var coffeeValues: [String]?
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
+  var waterValues: [String]
+  var coffeeValues: [String]
+
+  required init?(coder aDecoder: NSCoder) {
     waterValues = ["18.5", "0.375"]
     coffeeValues = ["1", "1"]
-    
+    super.init(coder: aDecoder)
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
     timer = JMPTimer(withLabel: displayTimeLabel)
     
@@ -99,7 +101,7 @@ class ViewController: UIViewController {
   
   
   @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
-    waterRatioTF.text = waterValues?[sender.selectedSegmentIndex]
+    waterRatioTF.text = waterValues[sender.selectedSegmentIndex]
     
     
     
